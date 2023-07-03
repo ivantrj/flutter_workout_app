@@ -17,7 +17,7 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "My Workouts",
       theme: ThemeData(
-        primarySwatch: Colors.purple,
+        useMaterial3: true,
       ),
       home: BlocProvider<WorkoutsCubit>(
         create: (BuildContext context) {
@@ -26,7 +26,7 @@ class MainApp extends StatelessWidget {
             print("Loading workouts...");
             workoutsCubit.getWorkouts();
           }
-          print('workouts loadded');
+          print('workouts loaded');
           return workoutsCubit;
         },
         child: BlocBuilder<WorkoutsCubit, List<Workout>>(builder: (context, state) {

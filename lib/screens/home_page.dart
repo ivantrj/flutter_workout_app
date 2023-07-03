@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_workout_app/blocs/cubit/workouts_cubit.dart';
+import 'package:flutter_workout_app/helpers.dart';
 import 'package:flutter_workout_app/models/workout.dart';
 
 class HomePage extends StatelessWidget {
@@ -35,6 +36,7 @@ class HomePage extends StatelessWidget {
                             icon: Icon(Icons.edit),
                           ),
                           title: Text(workout.title!),
+                          trailing: Text(formatTime(workout.getTotal(), true)),
                         );
                       },
                       body: ListView.builder(
@@ -43,6 +45,8 @@ class HomePage extends StatelessWidget {
                         itemBuilder: (context, index) {
                           return ListTile(
                             onTap: null,
+                            leading: Text(formatTime(workout.exercises[index].prelude!, true)),
+                            trailing: Text(formatTime(workout.exercises[index].duration!, true)),
                             title: Text(workout.exercises[index].title!),
                             visualDensity: const VisualDensity(
                               horizontal: 0,
