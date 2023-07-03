@@ -13,7 +13,7 @@ class Exercise extends Equatable {
   final int? index;
   final int? startTime;
 
-  Exercise({
+  const Exercise({
     required this.title,
     required this.prelude,
     required this.duration,
