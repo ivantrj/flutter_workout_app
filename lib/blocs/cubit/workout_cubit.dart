@@ -8,4 +8,8 @@ class WorkoutCubit extends Cubit<WorkoutState> {
   editWorkout(Workout workout, int index) {
     return emit(WorkoutEditing(workout, index));
   }
+
+  goHome() {
+    return emit(WorkoutInitial());
+  }
 }
