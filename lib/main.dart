@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_workout_app/blocs/cubit/workout_cubit.dart';
 import 'package:flutter_workout_app/blocs/cubit/workouts_cubit.dart';
-import 'package:flutter_workout_app/models/workout.dart';
 import 'package:flutter_workout_app/screens/home_page.dart';
 import 'package:flutter_workout_app/states/workout_states.dart';
 
