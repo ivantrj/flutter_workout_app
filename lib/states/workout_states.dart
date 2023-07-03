@@ -18,7 +18,7 @@ class WorkoutInitial extends WorkoutState {
 class WorkoutEditing extends WorkoutState {
   final int index;
 
-  WorkoutEditing(Workout? workout, this.index) : super(null, 0);
+  WorkoutEditing(Workout? workout, this.index) : super(workout, 0);
 
   @override
   List<Object?> get props => [workout, index];

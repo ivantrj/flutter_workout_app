@@ -5,9 +5,7 @@ import 'package:flutter_workout_app/states/workout_states.dart';
 class WorkoutCubit extends Cubit<WorkoutState> {
   WorkoutCubit() : super(WorkoutInitial());
 
-  editWorkout(Workout workout, int index) {
-    return emit(WorkoutEditing(workout, index));
-  }
+  editWorkout(Workout? workout, int index) => emit(WorkoutEditing(workout, index));
 
   goHome() {
     return emit(WorkoutInitial());

@@ -41,7 +41,7 @@ class MainApp extends StatelessWidget {
           if (state is WorkoutInitial) {
             return const HomePage();
           } else if (state is WorkoutEditing) {
-            return EditWorkoutPage();
+            return const EditWorkoutPage();
           }
           return Container();
         }),
