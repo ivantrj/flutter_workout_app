@@ -4,7 +4,9 @@
 
 // String exerciseToJson(Exercise data) => json.encode(data.toJson());
 
-class Exercise {
+import 'package:equatable/equatable.dart';
+
+class Exercise extends Equatable {
   final String? title;
   final int? prelude;
   final int? duration;
@@ -32,4 +34,10 @@ class Exercise {
         "prelude": prelude,
         "duration": duration,
       };
+
+  @override
+  List<Object?> get props => [title, prelude, duration, index, startTime];
+
+  @override
+  bool get stringify => true;
 }
