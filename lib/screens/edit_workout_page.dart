@@ -24,13 +24,16 @@ class EditWorkoutPage extends StatelessWidget {
               itemCount: we.workout!.exercises.length,
               itemBuilder: (context, index) {
                 Exercise exercise = we.workout!.exercises[index];
-                return ListTile(
-                  leading: Text(
-                    formatTime(exercise.prelude!, true),
-                  ),
-                  trailing: Text(formatTime(exercise.duration!, true)),
-                  title: Text(exercise.title!),
-                );
+                if (we.exIndex == index) {
+                  return EditExercisePage(we.workout, we.index, we.exIndex);
+                } else {
+                  return ListTile(
+                    leading: Text(formatTime(exercise.prelude!, true)),
+                    trailing: Text(formatTime(exercise.duration!, true)),
+                    title: Text(exercise.title!),
+                    onTap: () => BlocProvider.of<WorkoutCubit>(context).editExercise(index),
+                  );
+                }
               },
             ),
           );
